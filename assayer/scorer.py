@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from assayer.models import ModelResult
+import re
 
 _model = None
 
@@ -40,11 +41,7 @@ def compute_similarity(results: list[ModelResult]) -> dict[tuple[str, str], floa
 
 
 def readability_stats(text: str) -> dict[str, float]:
-    sentences = [
-        s
-        for s in text.replace("!", ".").replace("?", ".").split(".")
-        if s.strip()
-    ]
+    sentences = [s for s in re.split(r"[.!?]+(?:\s|$)", text) if s.strip()]
     words = text.split()
     word_count = len(words)
     sentence_count = len(sentences) or 1

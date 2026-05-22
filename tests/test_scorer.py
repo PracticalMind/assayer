@@ -78,3 +78,21 @@ def test_readability_stats_empty():
     assert stats["word_count"] == 0
     assert stats["sentence_count"] == 1
     assert stats["avg_sentence_length"] == 0.0
+
+
+def test_readability_stats_abbreviations():
+    stats = readability_stats("Dr. Smith scored 3.5. Well done.")
+    assert stats["word_count"] == 6
+    assert stats["sentence_count"] == 2
+
+
+def test_readability_stats_urls():
+    stats = readability_stats("Visit example.com for details.")
+    assert stats["word_count"] == 4
+    assert stats["sentence_count"] == 1
+
+
+def test_readability_stats_exclamations():
+    stats = readability_stats("The price is $3.99. Cheap!")
+    assert stats["word_count"] == 5
+    assert stats["sentence_count"] == 2
