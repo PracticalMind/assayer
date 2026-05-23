@@ -2,6 +2,8 @@
 
 Send a prompt to multiple language models in parallel and compare their outputs in the terminal. Useful for evaluating which model handles a given task better, measuring semantic similarity between responses, or running an LLM-as-judge evaluation - without leaving the shell.
 
+![demo](demo.gif)
+
 ## Installation
 
 ```bash
