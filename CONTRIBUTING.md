@@ -2,6 +2,24 @@
 
 Thank you for your interest in contributing to **assayer**! This document covers how to set up your development environment, the project structure, and the pull request process.
 
+## Before You Start
+
+Make sure your local Git email matches the primary email on your GitHub account. If they don't match, your commits won't appear in the contributors list and your profile picture won't be linked.
+
+Check your current config:
+
+```bash
+git config --global user.email
+```
+
+If it doesn't match, update it:
+
+```bash
+git config --global user.email "you@example.com"
+```
+
+You can verify or update your GitHub primary email at **Settings → Emails**: https://github.com/settings/emails
+
 ## Development Setup
 
 1. **Fork and clone** the repository:
@@ -63,7 +81,7 @@ Thank you for your interest in contributing to **assayer**! This document covers
 
 ## PR Process
 
-1. Fork the repository and create a branch from `main`.
+1. Fork the repository and create a branch from `main`. Use the `type/short-description` naming format — e.g. `fix/readability-sentence-boundaries`, `feat/stream-output`, `docs/update-readme`. Common prefixes: `feat`, `fix`, `docs`, `test`, `chore`.
 2. Implement your changes and add tests.
 3. Ensure all tests pass and `ruff check .` is clean.
 4. Open a Pull Request with a clear description of the change and its motivation.
